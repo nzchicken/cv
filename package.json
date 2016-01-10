@@ -1,0 +1,24 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "My CV, for great victory and science",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nzchicken/cv.git"
+  },
+  "author": "Ben Naylor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nzchicken/cv/issues"
+  },
+  "homepage": "https://github.com/nzchicken/cv",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "normalize-css": "^2.3.1"
+  }
+}
