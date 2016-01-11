@@ -1,14 +1,22 @@
 var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
+var plugins = require('gulp-load-plugins')({ pattern: '*'});
+var taskPath = './tasks/';
+var taskList = require('fs').readdirSync(taskPath);
 
-function getTask(task) {
-    return require('./gulp-tasks/' + task)(gulp, plugins);
-}
+taskList.forEach(function(taskFile) {
+    if (/.*.js$/.test(taskFile)) require(taskPath + taskFile)(gulp, plugins);
+})
 
-//gulp.task('scripts', getTask('scripts'));
-gulp.task('sass', getTask('sass'));
+gulp.task('clean', function() {
+    plugins.del.sync(['dist']);  
+});
 
-gulp.task('default', ['sass'], function () {
-    //gulp.watch('src/js/**/*.js', ['scripts']);
-    gulp.watch('src/sass/**/*.{sass,scss}', ['sass']);
+gulp.task('build', function() {
+    plugins.runSequence('clean',
+               [ 'html', 'css', 'scss', 'scripts' ]);
+
+});
+
+gulp.task('watch', function() {
+    plugins.runSequence('build', 'serve');
 });
