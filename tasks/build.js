@@ -1,15 +1,14 @@
 module.exports = function (gulp,plugins) {
     
-    gulp.task('css', function() {
-        var options = { matchPattern: "*.css" };
-        return gulp.src('src/styles.css')
-            .pipe(plugins.cssimport(options))
-            .pipe(gulp.dest("dist/css"));
-    });
-
     gulp.task('scss', function() {
-        return gulp.src('src/scss/styles.scss')
-            .pipe(plugins.sass())
+        return gulp.src('src/scss/**/*.{scss,sass}')
+            .pipe(plugins.sass({
+                includePaths: [
+                    'node_modules/normalize-scss/sass',
+                    'node_modules/skeleton-scss/scss',
+                    'node_modules/support-for/sass'
+                ]
+            }))
             .pipe(plugins.autoprefixer())
             .pipe(plugins.cssnano())
             .pipe(gulp.dest('dist/css'))
@@ -29,7 +28,7 @@ module.exports = function (gulp,plugins) {
         var options = {
             ignorePartials: true,
             batch: [
-                './src/templates'
+                'src/templates'
             ],
             helpers: {}
         };
