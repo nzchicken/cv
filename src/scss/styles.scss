@@ -1,0 +1,20 @@
+@import 'normalize';
+@import 'skeleton';
+
+header {
+    padding: 15px 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+header .name { 
+    margin-bottom: 0px;
+}
+
+header .headline, header .title {
+    margin-bottom: 5px;
+}
+
+.introduction {
+    background-color: #F0F0FF;
+    padding: 15px 0px;
+}
