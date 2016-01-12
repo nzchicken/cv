@@ -10,7 +10,7 @@ module.exports = function (gulp,plugins) {
                 ]
             }))
             .pipe(plugins.autoprefixer())
-            .pipe(plugins.cssnano())
+ //           .pipe(plugins.cssnano())
             .pipe(gulp.dest('dist/css'))
             .pipe(plugins.browserSync.stream({ match: '**/*.css'}));
     });
@@ -18,7 +18,7 @@ module.exports = function (gulp,plugins) {
     gulp.task('scripts', function () {
         return gulp.src('src/js/**/*.js')
             .pipe(plugins.concat('scripts.js'))
-            .pipe(plugins.uglify())
+//            .pipe(plugins.uglify())
             .pipe(gulp.dest('dist/js'));
     });
 

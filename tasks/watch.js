@@ -8,7 +8,7 @@ module.exports = function(gulp, plugins) {
         })
 
         gulp.watch("src/scss/**/*.{scss,sass}", [ 'scss' ]);
-        gulp.watch("src/js/**/*.js", [ 'js-watch' ], reload);
+        gulp.watch("src/js/**/*.js", [ 'scripts' ]).on("change", reload);
         gulp.watch("src/**/*.hbs", [ 'html' ]).on("change", reload);
     });
     gulp.task('js-watch', [ 'scripts' ]); 
