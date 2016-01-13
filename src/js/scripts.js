@@ -1,7 +1,6 @@
 var nav;
 var navOffset;
 
-
 document.addEventListener('DOMContentLoaded', function() {
     //DOM ready
     window.addEventListener('resize', onResize);
@@ -18,5 +17,5 @@ function onResize() {
 }
 
 function onScroll() {
-    document.body.classList.toggle('nav-docked', navOffset < window.pageYOffset);
+    document.body.classList.toggle('nav-docked', navOffset <= window.pageYOffset);
 }

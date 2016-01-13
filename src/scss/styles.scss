@@ -2,18 +2,21 @@
 @import 'normalize';
 @import 'skeleton';
 
+$primary: #33c3f0;
+$primary--x-light: #ecfafe;
+
+
 /** defaults **/
 header, section {
     margin: 4rem 0rem;
 }
 
-section .container {
-    border-bottom: 1px solid #ddd;
+.container {
+    border-bottom: 1px solid $primary;
 }
 
-nav .container {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+.nav-bar .container {
+    border-top: 1px solid $primary;
 }
 
 .section-header {
@@ -27,24 +30,31 @@ nav .container {
 }
 
 /** header **/
-header .name { 
-    margin-bottom: 0.2rem;
-}
+.header {
+    .name { 
+        margin-bottom: 0.2rem;
+    }
 
-header .headline, header .title {
-    margin-bottom: 0.5rem;
-}
+    .headline, .title {
+        margin-bottom: 0.5rem;
+    }
 
+    .container {
+        border: none;
+    }
+}
 
 /** nav **/
 
 .nav-bar {
+    transition: background-color 0.5s ease;
+    background-color: #fff;
     z-index: 999;
 }
 .nav-list {
     list-style: none;
     margin-bottom: 0;
-    
+
     li {
         position: relative;
         float: left;
@@ -61,7 +71,7 @@ header .headline, header .title {
     }
 
     li a:hover {
-        color: #33F;
+        color: $primary;
     }
 }
 
@@ -71,7 +81,12 @@ header .headline, header .title {
         top: 0;
         left: 0;
         width: 100%;
-        background-color: #FFF;
+        background-color: $primary--x-light;
+        border-bottom: 1px solid $primary;
+    
+        .container {
+            border: none;
+        }
     }
 
     .nav-spacer {
@@ -86,33 +101,34 @@ header .headline, header .title {
 }
 
 //fix head link padding
-h5.section-header:before { 
-  display: block; 
-  content: " "; 
-  margin-top: -10.2rem; 
-  height: 10.2rem; 
-  visibility: hidden; 
+.section-header:before { 
+    display: block; 
+    content: " "; 
+    margin-top: -10.2rem; 
+    height: 10.2rem; 
+    visibility: hidden; 
 }
 
 
 /** sections **/
 
-section.introduction {
+.intro {
+    overflow: hidden;
 }
 
-section.experience ul {
+.experience ul {
     margin-left: 1rem;
 }
 
 .work {
     margin-bottom: 2rem;
     display: flex;
-    
+
     .description {
         padding-right: 1.5rem;
-        border-right: 1px solid #ccc;
+        border-right: 1px solid $primary;
     }
-    
+
     .summary {
         padding-left: 1.5rem;   
     }
