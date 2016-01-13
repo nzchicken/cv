@@ -1,10 +1,34 @@
-<section class="contact" id="contact">
+<section class="contact">
     <div class="container">
         <div class="row">
-            <div class="twelve columns">
-                <h5>Contact</h4>
-                <p>Contact form/email/number?</p>
+            <h5 id="contact" class="section-header">Contact</h4>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <p><strong>Email:</strong> <a href="mailto:nayben@gmail.com">nayben@gmail.com</a></p>
+            </div>
+            <div class="six columns">
+                <p><strong>Mobile:</strong> 027 703 0567</p>
             </div>
         </div>
+        <div class="row">
+            <h6 class="section-sub-header">Send me a message:</h6>
+        </div>
+        <form class="contact-form">
+            <div class="row">
+                <div class="six columns">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your name" class="u-full-width"/>
+                </div>
+                <div class="six columns">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="test@example.com" class="u-full-width">
+                </div>
+            </div>
+            <label for="message">Message</label>
+            <textarea id="message" class="u-full-width" placeholder="Your message..."></textarea>
+            <div class="g-recaptcha" data-sitekey="6LdDNBUTAAAAADgjBlT299MtMohSMEaxAcUVQ-BJ"></div>
+            <input type="submit" class="button-primary" value="Submit">
+        </form>
     </div>
 </section>

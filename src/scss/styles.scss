@@ -17,6 +17,8 @@ nav .container {
 }
 
 .section-header {
+    z-index: 1;
+    position: initial;
 }
 
 .section-sub-header {
@@ -36,6 +38,9 @@ header .headline, header .title {
 
 /** nav **/
 
+.nav-bar {
+    z-index: 999;
+}
 .nav-list {
     list-style: none;
     margin-bottom: 0;
@@ -67,7 +72,6 @@ header .headline, header .title {
         left: 0;
         width: 100%;
         background-color: #FFF;
-        z-index: 999;
     }
 
     .nav-spacer {
@@ -79,6 +83,15 @@ header .headline, header .title {
     display: none;
     width: 100%;
     height: 4.2em;
+}
+
+//fix head link padding
+h5.section-header:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -10.2rem; 
+  height: 10.2rem; 
+  visibility: hidden; 
 }
 
 
@@ -114,3 +127,6 @@ section.experience ul {
 
 }
 
+.contact-form input[type="submit"] {
+    margin-top: 1rem;
+}
