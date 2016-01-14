@@ -1,27 +1,27 @@
 var express = require('express');
-var mailer = require('express-mailer');
 var bodyParser = require('body-parser');
-var https = require('https');
+var fetch = require('node-fetch');
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 var app = express();
 
-require('dotenv').load;
+var mailer = nodemailer.createTransport(smtpTransport({
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT,
+    secure: process.env.EMAIL_SECURE,
+    auth: {
+        user: process.env.EMAIL_USERNAME,
+        pass: process.env.EMAIL_PASSWORD
+    }
+}));
+
+require('dotenv').load();
 
 app.set('port', process.env.PORT || 3000);
 
 app.use(express.static('dist'));
 app.use(bodyParser.json());
 
-mailer.extend(app, {
-    from: process.env.EMAIL_FROM,
-    host: process.env.EMAIL_HOST,
-    secureConnection: process.env.EMAIL_SECURE,
-    port: process.env.EMAIL_PORT,
-    transportMethod: process.env.EMAIL_TRANSPORT,
-    auth: {
-        user: process.env.EMAIL_USERNAME,
-        pass: process.env.EMAIL_PASSWORD
-    }
-});
 
 app.post('/mail', function(req, res) {
     //email regex
@@ -29,56 +29,56 @@ app.post('/mail', function(req, res) {
     
     //check content
     var msg = req.body;
-    console.log(msg);
 
-    if (!msg.name || !msg.email || !msg.message || !msg['g-recaptcha-response']) {
-        res.status(201).send({ status: 'FAILED', message: 'Need to provide name, email, message, and valid captcha response'});
+    if (!msg.name || !msg.email || !msg.message || !msg.recaptcha_response) {
+        res.status(400).send({ status: 'FAILED', message: 'Need to provide name, email, message, and valid captcha response'});
         return;
     }
 
     if (!regex_email.test(msg.email)) {
-        res.status(201).send({ status: 'FAILED', message: 'Email needs to be in the correct email format'});
+        res.status(400).send({ status: 'FAILED', message: 'Email needs to be in the correct email format'});
         return;
     }
 
     if (msg.message.length > 1000) {
-        res.status(201).send({ status: 'FAILED', message: 'Message needs to be less than 1000 characters'});
+        res.status(400).send({ status: 'FAILED', message: 'Message needs to be less than 1000 characters'});
     }
 
     //check recaptcha
-    verifyRecaptcha(msg['g-recaptcha-response'], function(success) {
-        if (!success) {
-            res.status(201).send({ status: 'FAILED', message: 'Invalid Recaptcha response'});
-            return;
-        }
+    var url ="https://www.google.com/recaptcha/api/siteverify?response=" + msg.recaptcha_response + "&secret=" + process.env.RECAPTCHA_SECRET;
+    fetch(url, {
+        method: 'post'
+    })
+        .then(response => {
+            return response.json();
+        }).then(response => {
+            if (!response.success) throw new Error('Recaptcha failed: ' + response['error_codes']);
+            var htmlMessage = 'From: ' + msg.name;
+            htmlMessage += 'Email: ' + msg.email;
+            htmlMessage += 'Message: ' + msg.message;
+            
+            return mailer.sendMail({
+                from: msg.email,
+                to: process.env.EMAIL_TO,
+                subject: 'Message from ' + msg.name + ' on your website',
+                html: htmlMessage
+            });
+        }).then(info => {
+            console.log(info);
+            res.status(200).send({ status: 'OK' });
+        }).catch(error => {
+            console.log(error);
+            //this is gross, but oh well.
+            if (error.toString().indexOf('Recaptcha') !== -1) {
+                res.status(400).send({ status: 'FAILED', message: 'Invalid Recaptcha response'});
+                return;
+            }
+            res.status(400).send({ status: 'FAILED', message: 'Failed to send email'});
+        });
         
-         
-
-        //send email
-
-        res.status(200).send({ status: 'OK' });
-    });
 });
 
 app.listen(app.get('port'), function() {
    console.log('App running on port ' + app.get('port')); 
 });
 
-// Helper function to make API call to recatpcha and check response
-function verifyRecaptcha(key, callback) {
-    https.get("https://www.google.com/recaptcha/api/siteverify?secret=" + process.env.RECAPTCHA_SECRET + "&response=" + key, function(res) {
-        var data = "";
-        res.on('data', function (chunk) {
-            data += chunk.toString();
-        });
-        res.on('end', function() {
-            try {
-                var parsedData = JSON.parse(data);
-                console.log(parsedData);
-                callback(parsedData.success);
-            } catch (e) {
-                callback(false);
-            }
-        });
-    });
-}

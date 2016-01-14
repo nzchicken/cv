@@ -33,26 +33,27 @@ function submitMailer(evt) {
     var validForm = true;
     formFields.forEach(field => { var val = getFormFieldValue(contactForm, field); req[field] = val; validForm &= val });
 
-    req['g-captcha-response'] = grecaptcha.getResponse();
+    req.recaptcha_response = grecaptcha.getResponse();
 
-
+    
     //replace with fetch
-    aja()
-        .url('/mail')
-        .method('POST')
-        .cache(false)
-        .body(req)
-        .on('200', function(response) {
-            console.log('success', response); 
-        })
-        .on('201', function(response) {
-            console.log('fail', response);
-        })
-        .on('40*', function(response) {
-            console.log('super fail', response);
-        })
-        .go();
-
+    fetch('/mail', {
+        method: 'post',
+        headers: {
+            "Content-type" : "application/json"
+        },
+        body: JSON.stringify(req)
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(response => {
+        console.log('success', response); 
+    })
+    .catch(error => {
+        console.log('error', error);
+    });
+    
     return false;
 }
 

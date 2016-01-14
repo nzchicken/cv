@@ -16,7 +16,7 @@ module.exports = function (gulp,plugins) {
     });
 
     gulp.task('includes', function() {
-        return gulp.src('node_modules/aja/aja.min.js')
+        return gulp.src('node_modules/whatwg-fetch/fetch.js')
             .pipe(gulp.dest('dist/js'));
     });
 
