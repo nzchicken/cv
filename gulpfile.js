@@ -13,7 +13,7 @@ gulp.task('clean', function() {
 
 gulp.task('build', function() {
     plugins.runSequence('clean',
-               [ 'html', 'scss', 'scripts' ]);
+               [ 'html', 'includes', 'scss', 'scripts' ]);
 
 });
 

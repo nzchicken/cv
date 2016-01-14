@@ -15,6 +15,11 @@ module.exports = function (gulp,plugins) {
             .pipe(plugins.browserSync.stream({ match: '**/*.css'}));
     });
 
+    gulp.task('includes', function() {
+        return gulp.src('node_modules/aja/aja.min.js')
+            .pipe(gulp.dest('dist/js'));
+    });
+
     gulp.task('scripts', function () {
         return gulp.src('src/js/**/*.js')
             .pipe(plugins.concat('scripts.js'))

@@ -4,7 +4,7 @@
 
 $primary: #33c3f0;
 $primary--x-light: #ecfafe;
-
+$error: #f03333;
 
 /** defaults **/
 header, section {
@@ -27,6 +27,10 @@ header, section {
 .section-sub-header {
     text-transform: uppercase;
     font-weight: 600;
+}
+
+.invalid {
+    border: 1px solid $error !important;
 }
 
 /** header **/
@@ -112,7 +116,7 @@ header, section {
 
 /** sections **/
 
-.intro {
+.section {
     overflow: hidden;
 }
 
