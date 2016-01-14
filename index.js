@@ -5,17 +5,17 @@ var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var app = express();
 
+require('dotenv').load();
+
 var mailer = nodemailer.createTransport(smtpTransport({
-    host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
-    secure: process.env.EMAIL_SECURE,
+    service: process.env.EMAIL_SERVICE,
     auth: {
         user: process.env.EMAIL_USERNAME,
         pass: process.env.EMAIL_PASSWORD
     }
 }));
 
-require('dotenv').load();
+console.log(process.env);
 
 app.set('port', process.env.PORT || 3000);
 
@@ -53,18 +53,17 @@ app.post('/mail', function(req, res) {
             return response.json();
         }).then(response => {
             if (!response.success) throw new Error('Recaptcha failed: ' + response['error_codes']);
-            var htmlMessage = 'From: ' + msg.name;
-            htmlMessage += 'Email: ' + msg.email;
-            htmlMessage += 'Message: ' + msg.message;
+            var emailMessage = 'From: ' + msg.name + '\n';
+            emailMessage += 'Email: ' + msg.email + '\n';
+            emailMessage += 'Message: ' + msg.message;
             
             return mailer.sendMail({
-                from: msg.email,
+                from: process.env.EMAIL_FROM,
                 to: process.env.EMAIL_TO,
                 subject: 'Message from ' + msg.name + ' on your website',
-                html: htmlMessage
+                text: emailMessage
             });
         }).then(info => {
-            console.log(info);
             res.status(200).send({ status: 'OK' });
         }).catch(error => {
             console.log(error);
