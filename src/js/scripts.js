@@ -35,6 +35,8 @@ function submitMailer(evt) {
 
     req['g-captcha-response'] = grecaptcha.getResponse();
 
+
+    //replace with fetch
     aja()
         .url('/mail')
         .method('POST')
