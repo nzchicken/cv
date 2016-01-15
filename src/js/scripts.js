@@ -60,10 +60,10 @@ function submitMailer(evt) {
 
 function clearForm(form) {
     var elems = form.querySelectorAll('input[name="text"],input[name="email"],textarea[name="message"]');
-    elems.forEach(elem => {
-        elem.value = '';
-        elem.classList.remove('invalid');
-    })
+    for(var i = 0; i< elems.length; i++) {
+        elems[i].value = '';
+        elems[i].classList.remove('invalid');
+    }
     grecaptcha.reset();
 }
 
