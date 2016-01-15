@@ -57,17 +57,15 @@ header, section {
     background-color: #fff;
     z-index: 999;
 }
+
 .nav-list {
     list-style: none;
     margin-bottom: 0;
 
     li {
-        position: relative;
-        float: left;
-        margin-right: 3rem;
         margin-bottom: 0;
     }
-
+    
     li a {
         text-transform: uppercase;
         text-decoration: none;
@@ -79,31 +77,45 @@ header, section {
     li a:hover {
         color: $primary;
     }
-}
 
-.nav-docked {
-    .nav-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: $primary--x-light;
-        border-bottom: 1px solid $primary;
-    
-        .container {
-            border: none;
-        }
-    }
-
-    .nav-spacer {
-        display: block;
-    }
 }
 
 .nav-spacer {
     display: none;
     width: 100%;
-    height: 4.2em;
+}
+
+
+@media (min-width: 550px) {
+
+    .nav-list li {
+        position: relative;
+        float: left;
+        margin-right: 3rem;
+    }
+
+    .nav-spacer {
+        height: 4.2em;
+    }
+
+    .nav-docked {
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: $primary--x-light;
+            border-bottom: 1px solid $primary;
+
+            .container {
+                border: none;
+            }
+        }
+
+        .nav-spacer {
+            display: block;
+        }
+    }
 }
 
 //fix head link padding
@@ -161,12 +173,14 @@ header, section {
     width: 126px;
     background-color: $inactive;
     border-color: $inactive;
+    cursor: auto;
     .spinner {
         opacity: 1;
     }
 
 }
-.button-primary.active:hover {
+.button-primary.active:hover,
+.button-primary.active:focus {
     background-color: $inactive;
     border-color: $inactive;
 }

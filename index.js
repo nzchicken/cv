@@ -15,13 +15,10 @@ var mailer = nodemailer.createTransport(smtpTransport({
     }
 }));
 
-console.log(process.env);
-
 app.set('port', process.env.PORT || 3000);
 
 app.use(express.static('dist'));
 app.use(bodyParser.json());
-
 
 app.post('/mail', function(req, res) {
     //email regex

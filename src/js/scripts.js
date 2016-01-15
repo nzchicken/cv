@@ -59,7 +59,7 @@ function submitMailer(evt) {
 }
 
 function clearForm(form) {
-    var elems = form.querySelectorAll('input[name="text"],input[name="email"],textarea[name="message"]');
+    var elems = form.querySelectorAll('input[name="name"],input[name="email"],textarea[name="message"]');
     for(var i = 0; i< elems.length; i++) {
         elems[i].value = '';
         elems[i].classList.remove('invalid');
