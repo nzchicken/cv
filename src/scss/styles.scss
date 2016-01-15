@@ -4,7 +4,9 @@
 
 $primary: #33c3f0;
 $primary--x-light: #ecfafe;
+$inactive: #ABABAB;
 $error: #f03333;
+$transition: 0.5s ease;
 
 /** defaults **/
 header, section {
@@ -51,7 +53,7 @@ header, section {
 /** nav **/
 
 .nav-bar {
-    transition: background-color 0.5s ease;
+    transition: background-color $transition;
     background-color: #fff;
     z-index: 999;
 }
@@ -147,6 +149,36 @@ header, section {
 
 }
 
-.contact-form input[type="submit"] {
+
+.contact-submit {
     margin-top: 1rem;
+    width: 110px;
+    transition: width $transition,
+                color $transition;
+} 
+
+.button-primary.active {
+    width: 126px;
+    background-color: $inactive;
+    border-color: $inactive;
+    .spinner {
+        opacity: 1;
+    }
+
 }
+.button-primary.active:hover {
+    background-color: $inactive;
+    border-color: $inactive;
+}
+
+.spinner {
+    margin-left: 5px;
+    width: 11px;
+    height: 11px;
+    opacity: 0;
+    transition: opacity $transition;
+}
+
+
+
+

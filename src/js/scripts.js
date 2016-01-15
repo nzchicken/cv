@@ -25,14 +25,15 @@ function onScroll() {
 
 function submitMailer(evt) {
     evt.preventDefault();
-    
+   
+    var but = document.getElementById('submitContact');
+    but.classList.add('active');
+
     var formFields = [ 'name', 'email', 'message' ];
+    var validForm = true;
 
     var req = {};
-
-    var validForm = true;
     formFields.forEach(field => { var val = getFormFieldValue(contactForm, field); req[field] = val; validForm &= val });
-
     req.recaptcha_response = grecaptcha.getResponse();
 
     
@@ -43,28 +44,32 @@ function submitMailer(evt) {
             "Content-type" : "application/json"
         },
         body: JSON.stringify(req)
-    })
-    .then(response => {
+    }).then(response => {
         return response.json();
-    })
-    .then(response => {
+    }).then(response => {
+        but.classList.remove('active');
+        clearForm(contactForm);
         console.log('success', response); 
-    })
-    .catch(error => {
+    }).catch(error => {
         console.log('error', error);
+        but.classList.remove('active');
     });
     
     return false;
 }
 
-function clearForm() {
-
+function clearForm(form) {
+    var elems = form.querySelector('input[type="text"],input[type="email"],textarea');
+    elems.forEach(elem => {
+        elem.value = '';
+        elem.classList.remove('invalid');
+    })
+    grecaptcha.reset();
 }
 
 function getFormFieldValue(form, fieldName) {
     var elem = form.querySelector('[name="' + fieldName + '"]');
     
     elem.classList.toggle('invalid', !elem.value);
-    console.log(elem.value); 
     return elem.value;
 }
