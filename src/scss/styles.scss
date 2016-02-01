@@ -5,8 +5,10 @@
 $primary: #33c3f0;
 $primary--x-light: #ecfafe;
 $inactive: #ABABAB;
+$success: #2CF470;
 $error: #f03333;
 $transition: 0.5s ease;
+$weight-heavy: 600;
 
 /** defaults **/
 header, section {
@@ -28,11 +30,20 @@ header, section {
 
 .section-sub-header {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: $weight-heavy;
 }
 
 .invalid {
     border: 1px solid $error !important;
+}
+
+
+.is-error {
+    color: $error; 
+}
+
+.is-success {
+    color: $success;
 }
 
 /** header **/
@@ -69,7 +80,7 @@ header, section {
     li a {
         text-transform: uppercase;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: $weight-heavy;
         line-height: 6rem;
         color: #335;
     }
@@ -156,7 +167,7 @@ header, section {
     }
 
     .title {
-        font-weight: 600;
+        font-weight: $weight-heavy;
     }
 
 }
@@ -193,70 +204,11 @@ header, section {
     transition: opacity $transition;
 }
 
-
-/** modals */
-.overlay {
-    opacity: 0;
+.message {
     visibility: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 997;
-    transition: opacity $transition;
-
-    .backdrop {
-        background-color: #000;
-        opacity: 0.3;
-        width: 100%;
-        height: 100%;
-        z-index: 998;
-    }
-
+    font-weight: $weight-heavy;
 }
-
-.modal {
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%, 0);
-    width: 450px;
-    z-index: 999;
-    
-    .header {
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid $primary;
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-        text-align: center;
-        padding: 1.5rem 1rem;
-
-        h3 {
-            margin-bottom: 0;
-        }
-        
-    }
-
-    .content {
-        width: 100%;
-        background-color: #FFF;
-        border-bottom: 1px solid $primary;
-        padding: 1.5rem 1rem;
-    }
-
-    .footer {
-        width: 100%;
-        background-color: $primary--x-light;
-        border-bottom-left-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem; 
-        padding: 0 1rem;
-    }
-}
-
-
-.overlay.active {
-    opacity: 1;
+.message.is-error, .message.is-success {
     visibility: visible;
 }
+
