@@ -5,8 +5,10 @@
 $primary: #33c3f0;
 $primary--x-light: #ecfafe;
 $inactive: #ABABAB;
+$success: #2CF470;
 $error: #f03333;
 $transition: 0.5s ease;
+$weight-heavy: 600;
 
 /** defaults **/
 header, section {
@@ -28,11 +30,20 @@ header, section {
 
 .section-sub-header {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: $weight-heavy;
 }
 
 .invalid {
     border: 1px solid $error !important;
+}
+
+
+.is-error {
+    color: $error; 
+}
+
+.is-success {
+    color: $success;
 }
 
 /** header **/
@@ -55,7 +66,7 @@ header, section {
 .nav-bar {
     transition: background-color $transition;
     background-color: #fff;
-    z-index: 999;
+    z-index: 990;
 }
 
 .nav-list {
@@ -69,7 +80,7 @@ header, section {
     li a {
         text-transform: uppercase;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: $weight-heavy;
         line-height: 6rem;
         color: #335;
     }
@@ -156,7 +167,7 @@ header, section {
     }
 
     .title {
-        font-weight: 600;
+        font-weight: $weight-heavy;
     }
 
 }
@@ -193,6 +204,11 @@ header, section {
     transition: opacity $transition;
 }
 
-
-
+.message {
+    visibility: hidden;
+    font-weight: $weight-heavy;
+}
+.message.is-error, .message.is-success {
+    visibility: visible;
+}
 
