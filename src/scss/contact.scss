@@ -1,0 +1,41 @@
+@import './main';
+
+.contact-submit {
+    margin-top: 1rem;
+    width: 110px;
+    transition: width $transition,
+                color $transition;
+} 
+
+.button-primary.active {
+    width: 126px;
+    background-color: $inactive;
+    border-color: $inactive;
+    cursor: auto;
+    .spinner {
+        opacity: 1;
+    }
+
+}
+.button-primary.active:hover,
+.button-primary.active:focus {
+    background-color: $inactive;
+    border-color: $inactive;
+}
+
+.spinner {
+    margin-left: 5px;
+    width: 11px;
+    height: 11px;
+    opacity: 0;
+    transition: opacity $transition;
+}
+
+.message {
+    visibility: hidden;
+    font-weight: $weight-heavy;
+}
+.message.is-error, .message.is-success {
+    visibility: visible;
+}
+

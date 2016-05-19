@@ -1,0 +1,60 @@
+/** node_module includes **/
+@import 'normalize';
+@import 'skeleton';
+
+$primary: #33c3f0;
+$primary--x-light: #ecfafe;
+$inactive: #ABABAB;
+$success: #2CF470;
+$error: #f03333;
+$transition: 0.5s ease;
+$weight-heavy: 600;
+
+/** defaults **/
+header, section {
+    margin: 4rem 0rem;
+}
+
+.container {
+    border-bottom: 1px solid $primary;
+}
+
+.section {
+    overflow: hidden;
+}
+
+.section-header {
+    z-index: 1;
+    position: initial;
+}
+
+//fix head link padding
+.section-header:before { 
+    display: block; 
+    content: " "; 
+    margin-top: -10.1rem; 
+    height: 10.1rem; 
+    visibility: hidden; 
+}
+
+.section-sub-header {
+    text-transform: uppercase;
+    font-weight: $weight-heavy;
+}
+
+.invalid {
+    border: 1px solid $error !important;
+}
+
+.is-error {
+    color: $error; 
+}
+
+.is-success {
+    color: $success;
+}
+
+.list-item {
+    padding-left: 1.4rem;
+    text-indent: -1.4rem;
+}

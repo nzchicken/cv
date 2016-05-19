@@ -9,22 +9,23 @@ module.exports = function (gulp,plugins) {
                     'node_modules/support-for/sass'
                 ]
             }))
+            .pipe(plugins.concat('styles.css'))
             .pipe(plugins.autoprefixer())
- //           .pipe(plugins.cssnano())
-            .pipe(gulp.dest('dist/css'))
+            .pipe(plugins.cssnano())
+            .pipe(gulp.dest('./dist/css/'))
             .pipe(plugins.browserSync.stream({ match: '**/*.css'}));
     });
 
     gulp.task('includes', function() {
         return gulp.src('node_modules/whatwg-fetch/fetch.js')
-            .pipe(gulp.dest('dist/js'));
+            .pipe(gulp.dest('./dist/js'));
     });
 
     gulp.task('scripts', function () {
         return gulp.src('src/js/**/*.js')
             .pipe(plugins.concat('scripts.js'))
-//            .pipe(plugins.uglify())
-            .pipe(gulp.dest('dist/js'));
+            //.pipe(plugins.uglify())
+            .pipe(gulp.dest('./dist/js'));
     });
 
     gulp.task('html', function() {
@@ -41,7 +42,7 @@ module.exports = function (gulp,plugins) {
         return gulp.src('src/index.hbs')
             .pipe(plugins.compileHandlebars(templateData, options))
             .pipe(plugins.rename('index.html'))
-            .pipe(gulp.dest('dist'));
+            .pipe(gulp.dest('./dist'));
     });
 
 };

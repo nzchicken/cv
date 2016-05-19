@@ -1,0 +1,71 @@
+@import './main';
+
+.nav-bar .container {
+    border-top: 1px solid $primary;
+}
+.nav-bar {
+    transition: background-color $transition;
+    background-color: #fff;
+    z-index: 990;
+}
+
+.nav-list {
+    list-style: none;
+    margin-bottom: 0;
+
+    li {
+        margin-bottom: 0;
+    }
+    
+    li a {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: $weight-heavy;
+        line-height: 6rem;
+        color: #335;
+    }
+
+    li a:hover {
+        color: $primary;
+    }
+
+}
+
+.nav-spacer {
+    display: none;
+    width: 100%;
+}
+
+@media (min-width: 550px) {
+
+    .nav-list li {
+        position: relative;
+        float: left;
+        margin-right: 3rem;
+    }
+
+    .nav-spacer {
+        height: 4.2em;
+    }
+
+    .nav-docked {
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: $primary--x-light;
+            border-bottom: 1px solid $primary;
+
+            .container {
+                border: none;
+            }
+        }
+
+        .nav-spacer {
+            display: block;
+        }
+    }
+}
+
+
