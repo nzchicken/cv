@@ -11,22 +11,23 @@
     list-style: none;
     margin-bottom: 0;
 
-    li {
+    .nav-item {
         margin-bottom: 0;
+
+        .nav-link {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: $weight-heavy;
+            line-height: 6rem;
+            color: #335;
+            
+
+            &:hover {
+                color: $primary;
+            }
+        }
     }
     
-    li a {
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: $weight-heavy;
-        line-height: 6rem;
-        color: #335;
-    }
-
-    li a:hover {
-        color: $primary;
-    }
-
 }
 
 .nav-spacer {
@@ -36,7 +37,7 @@
 
 @media (min-width: 550px) {
 
-    .nav-list li {
+    .nav-list .nav-item {
         position: relative;
         float: left;
         margin-right: 3rem;

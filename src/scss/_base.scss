@@ -65,7 +65,15 @@ $weight-heavy: 600;
     color: $success;
 }
 
-.list-item {
+li {
     padding-left: 1.4rem;
     text-indent: -1.4rem;
 }
+
+@media (min-width: 550px) {
+    ul {
+        margin-left: 1rem;
+    }
+}
+
+
