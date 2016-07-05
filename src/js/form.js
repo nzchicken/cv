@@ -53,7 +53,7 @@ function clearForm(form) {
     var elems = form.querySelectorAll('input[name="name"],input[name="email"],textarea[name="message"]');
     for(var i = 0; i< elems.length; i++) {
         elems[i].value = '';
-        elems[i].classList.remove('invalid');
+        elems[i].classList.remove('is-invalid');
     }
     grecaptcha.reset();
 }
@@ -68,6 +68,6 @@ function setMessage(message, isError) {
 function getFormFieldValue(form, fieldName) {
     var elem = form.querySelector('[name="' + fieldName + '"]');
     
-    elem.classList.toggle('invalid', !elem.value);
+    elem.classList.toggle('is-invalid', !elem.value);
     return elem.value;
 }

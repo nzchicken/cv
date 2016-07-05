@@ -1,7 +1,7 @@
 module.exports = function (gulp,plugins) {
     
     gulp.task('scss', function() {
-        return gulp.src('src/scss/**/*.{scss,sass}')
+        return gulp.src('src/scss/styles.scss')
             .pipe(plugins.sass({
                 includePaths: [
                     'node_modules/normalize-scss/sass',
