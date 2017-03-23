@@ -1,0 +1,22 @@
+service: cv-backend
+
+provider:
+    name: aws
+    runtime: nodejs4.3
+    stage: dev
+    region: us-west-2
+    iamRoleStatements:
+        - Effect: "Allow"
+          Action:
+              - "ses:SendEmail"
+              - "ses:SendEmailRaw"
+          Resource:
+              - "*"
+
+functions:
+    sendMail:
+        handler: handler.sendMail
+        events:
+            - http:
+                path: mail
+                method: post
