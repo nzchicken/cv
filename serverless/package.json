@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.31.0"
+    "aws-sdk": "^2.31.0",
+    "node-fetch": "^1.6.3",
+    "serverless-secrets-plugin": "^0.0.1"
   }
 }
