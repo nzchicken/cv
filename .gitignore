@@ -1,5 +1,8 @@
 node_modules/
 dist
 npm-debug.log
-*.swp
+.npmignore
+.serverless/
 .env
+secrets.*.yml
+yarn-error.log
