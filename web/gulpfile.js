@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')({ pattern: '*'});
 var taskPath = './tasks/';
 var taskList = require('fs').readdirSync(taskPath);
+require('dotenv').load();
 
 taskList.forEach(function(taskFile) {
     if (/.*.js$/.test(taskFile)) require(taskPath + taskFile)(gulp, plugins);

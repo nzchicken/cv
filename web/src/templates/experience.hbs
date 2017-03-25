@@ -8,53 +8,16 @@
         <div class="row">
             <h6 class="section-sub-header">Skills <strong>/</strong> Certifications</h6>
             <ul>
-                <li>Salesforce Certified Developer (401)</li>
-                <li>Salesforce Apex/Visualforce</li>
-                <li>Front End Frameworks - Lightning/Aura, Visualforce, React, Angular, Build tools (Gulp, Grunt)</li>
-                <li>Front End Languages - HTML, CSS, SASS, JS - ES6</li>
-                <li>Back End - Apex, NodeJS, Express, SOQL/SOSL, SQL, AWS (API Gateway, Lambda, DynamoDB, S3)</li>
-                <li>Other/Older Languages - C/C++, PHP, jQuery, MySQL</li>
+                {{#each skillsAndCerts}}
+                    <li>{{this}}</li>
+                {{/each}}
             </ul>
         </div>
         <div class="row">
             <h6 class="section-sub-header">Work Experience</h6>
         </div>
-        {{#> work title="Senior Technical Consultant"
-                  company="Fronde"
-                  timeFrom="August '14"
-                  timeTo="Present"}}
-                  <ul>
-                      <li>Senior Consultant - Working with customers to gather requirements, prioritise their needs, and design solutions to improve their business processes by using Salesforce best practices</li>
-                      <li>Architect - Taking high level requirements, expanding on important details, and building solutions that integrate many applications and platforms together into a single ecosystem</li>
-                      <li>Developer - Expanding on solution architecture to implement the moving parts of the design. Working closely with customers using Agile methodologies to produce the solutions they need. Utilising the latest development tools, languages, and frameworks, to deliver future proofed solutions</li>
-                      <li>Motivator - Working closely with the rest of the consultant team, inspiring a "forever learning" attitude, and being enthusiastic and approachable for any questions and help required</li>
-                      <li>Experimenter - Continuously experimenting with new technologies and pushing them to their limit. Integrating a physical brass bell with Salesforce to alert the office of company success (Sales, Project completion). Trying to get AWS Lambda to run front end builds autonomously from Github pushes</li>
-                      <li>Speaker - Attend Dreamforce 2015, where I delivered a talk to an at capacity room on the intricacies of Dynamic Apex Binding utilising Salesforce configuration elements</li>
-                  </ul>
-        {{/work}}
-        {{#> work title="Lead CRM Developer"
-                  company="Vodafone New Zealand"
-                  timeFrom="November '12"
-                  timeTo="August '14"}}
-                  <ul>
-                      <li>System Lead - Owned the design and architecture of the internal Salesforce.com instance for Vodafone New Zealand. Responsible for approving changes that would impact on the architecture of the Salesforce Implementation</li>
-                      <li>Developer - Built custom user interfaces, data automation mechanisms, and integrations where out of the box Salesforce configuration was either incapable of providing solutions, or delivered a bad user experience</li>
-                      <li>Analyst - Utilised past experience to design and develop dashboards for the wider Sales Leadership Team (SLT), and their direct reports. Produced and delivered training to individuals and teams on how to utilise the reports and dashboards to achieve their KPIs</li>
-                      <li>Innovator - Worked with the wider team to understand their pain points, and what I could do as a Developer to help improve their processes. Built a user specific "My Status Board" of what the user could do to improve their sales and time management and KPI. My Status Board was recognised by Salesforce for innovative thinking, design and implementation</li>
-                  </ul>
-        {{/work}}
-        {{#> work title="CRM Developer"
-                  company="Salesforce Administrator/Developer"
-                  timeFrom="April '12"
-                  timeTo="November '12"}}
-                  <p>Localist utilised heavy Salesforce customization (Custom Objects, Visualforce, Apex, etc) to provide an automated solution of Sales to Print of their local business guide.</p>
-                  <p>I was one of the two direct employees working on the Salesforce.com instance, where we were accountable for data fixes, user administration, and development of the system. Due to the extensive customisation, and long deployment times, many improvements were made to existing customisation and configuration elements. Regular data audits and cleanups were performed to ensure financial data was not affected. Reports and Dashboards were utilised heavily to provide proactive monitoring of any data issues.</p>
-        {{/work}}
-        {{#> work title="Various"
-                  company="Spark New Zealand (prev. Telecom NZ)"
-                  timeFrom="'07'"
-                  timeTo="November '12"}}
-                  <p>Various roles over 5 years including Reporting Analyst, Business Improvement Manager, and Business Analyst. More details can be provided on request.</p>
-        {{/work}}
+        {{#each workExperience}}
+            {{> work}}
+        {{/each}}
     </div>
 </section>

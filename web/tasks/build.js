@@ -1,3 +1,6 @@
+var fs = require('fs');
+var path = require('path');
+
 module.exports = function (gulp,plugins) {
     
     gulp.task('scss', function() {
@@ -40,6 +43,12 @@ module.exports = function (gulp,plugins) {
         };
 
         return gulp.src('src/index.hbs')
+            .pipe(plugins.data(function() {
+                return process.env;
+            }))
+            .pipe(plugins.data(function(file) {
+                return JSON.parse(fs.readFileSync('./data/' + path.basename(file.path) + '.json'));
+            }))
             .pipe(plugins.compileHandlebars(templateData, options))
             .pipe(plugins.rename('index.html'))
             .pipe(gulp.dest('./dist'));
