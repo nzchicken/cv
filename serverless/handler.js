@@ -5,6 +5,7 @@ const fetch = require('node-fetch');
 const EMAIL_REGEX = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 module.exports.sendMail = (event, context, callback) => {
+    console.log(event);
 
     const body = JSON.parse(event.body);
 
@@ -15,14 +16,16 @@ module.exports.sendMail = (event, context, callback) => {
             callback(null, generateResponse('OK', 200, 'Sent Email'));
         })
         .catch(err => {
+            console.log(err);
             callback(null, generateResponse('FAILED', 400, err.message));
         });
 };
 
 function validateResponse(body) {
     return new Promise((resolve, reject) => { 
-        const { name, email, message, recaptcha_response } = body;
+        if (!body) reject(new Error('Need to provide a body with the request'));
 
+        const { name, email, message, recaptcha_response } = body;
         if (!name || !email || !message || !recaptcha_response)
             reject(new Error('Need to provide name, email, message, and valid captcha response'));
 
