@@ -62,6 +62,7 @@ function sendEmail(body) {
 
     return ses.sendEmail({
         Destination: {
+            ToAddresses: [ process.env.EMAIL_TO ]
         },
         Message: {
             Body: {
