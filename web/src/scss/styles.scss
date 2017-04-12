@@ -1,6 +1,6 @@
 /** node_module includes **/
-@import 'normalize';
-@import 'skeleton';
+@import '~normalize-scss/sass/normalize';
+@import '~skeleton-scss/scss/skeleton';
 
 /** partials **/
 @import "base";

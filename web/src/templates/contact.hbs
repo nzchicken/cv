@@ -14,7 +14,7 @@
         <div class="row">
             <h6 class="section-sub-header">Send me a message:</h6>
         </div>
-        <form class="contact-form" id="contactForm" onsubmit="submit">
+        <form class="contact-form" id="contactForm">
             <div class="row">
                 <div class="six columns">
                     <label for="name">Name</label>
@@ -27,7 +27,12 @@
             </div>
             <label for="message">Message</label>
             <textarea name="message" class="u-full-width" placeholder="Your message..."></textarea>
-            <div id="g-captcha" class="g-recaptcha" data-sitekey="{{SITE_KEY}}"></div>
+            <div id="g-captcha"
+                 class="g-recaptcha"
+                 data-sitekey="{{SITE_KEY}}"
+                 data-callback="recaptchaCallback"
+                 data-size="invisible">
+            </div>
             <button class="button-primary contact-submit" id="submitContact">
                 Submit
                 <i class="spinner fa fa-spin fa-refresh"></i> 
