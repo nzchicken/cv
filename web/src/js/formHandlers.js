@@ -23,7 +23,6 @@ class FormHandlers {
         this.contactForm.classList.toggle('active', true);
 
         const data = this.generatePayload(token);
-        console.log(JSON.stringify(data));
 
         fetch(this.mailerEndpoint, {
             method: 'post',
@@ -56,7 +55,6 @@ class FormHandlers {
         //return whether the form is valid or not
 
         return FORM_FIELDS.reduce((accumulator, currentValue) => {
-            console.log('here', currentValue);
             const element = this.contactForm.querySelector('[name=' + currentValue + ']');
 
             const hasValue = !!element.value;
