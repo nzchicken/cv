@@ -29,6 +29,7 @@ class FormHandlers {
             headers: {
                 "Content-type" : "application/json"
             },
+            mode: 'no-cors',
             body: JSON.stringify(data)
         })
         .then(response => {
