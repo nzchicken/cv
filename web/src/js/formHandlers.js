@@ -39,7 +39,7 @@ class FormHandlers {
         })
         .then(response => response.json())
         .then(response => {
-            clearForm(contactForm);
+            this.clearForm(contactForm);
             this.setMessage('Thank you for your contact', false);
         })
         .catch(error => {
