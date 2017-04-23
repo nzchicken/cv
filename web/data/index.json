@@ -3,16 +3,17 @@
     "mobile" : "+31 6 4130 6546",
     "SITE_KEY" : "6LcV0BwUAAAAAOhqsmMr5pbPbDjgXAJEJCOegOAN",
     "mailerEndpoint" : "https://api.bennaylor.nz/d/mail",
-    "introduction" : "<p>Welcome, Goedendag!<\/p><p>I'm a consultant, senior developer, systems architect, cloud systems enthusiast, and a transformer of ideas into software. My current focus is working on the Salesforce.com platform, where I fill the role of a Senior Salesforce.com Technical Consultant.<\/p>",
+    "introduction" : "<p>Welcome, Goedendag!<\/p><p>I'm an architect, senior developer, consultant, cloud systems enthusiast, and a transformer of ideas into software. My current focus is working on the Salesforce.com platform, where I fill the role of a Solutions Architect Consultant.<\/p>",
     "workActivities" : [
         "Delivering software for many companies across many different industries by writing efficient, standards-based, high-performing code that fulfills the business requirements",
         "Discovering what the client needs for their project by challenging the status quo and then providing true business value",
         "Providing high-level architectural guidance for complex integration points across many different clients",
         "Engaging with our wider team, bringing a sense of camaraderie to the office",
-        "Working in small agile teams, flexibly delivering great outcomes"
+        "Working in small agile teams, flexibly and effectively delivering great outcomes"
     ],
     "hobbies" : [
-        "Building websites (deduction.io)",
+        "Learning Dutch",
+        "Web/mobile app development",
         "Playing with ICs, Arduino’s, Photons (particle.io)",
         "Woodworking",
         "Being outdoors, hiking overnight trips in the middle of nowhere",
@@ -20,19 +21,20 @@
     ],
     "skillsAndCerts" : [
         "Salesforce Certified Developer (401)",
-        "Salesforce Apex/Visualforce",
-        "Front End Frameworks - Lightning/Aura, Visualforce, React, Angular, Build tools (Gulp, Grunt)",
+        "Salesforce App Builder",
+        "Salesforce Platform Developer I",
+        "Front End Frameworks - Lightning/Aura, Visualforce, React, Build tools (Webpack, Gulp)",
         "Front End Languages - HTML, CSS, SASS, JS - ES6",
-        "Back End - Apex, NodeJS, Express, SOQL/SOSL, SQL, AWS (API Gateway, Lambda, DynamoDB, S3)",
+        "Back End - Apex, NodeJS, SOQL/SOSL, SQL, AWS (API Gateway, Lambda, DynamoDB, S3)",
         "Other/Older Languages - C/C++, PHP, jQuery, MySQL"
     ],
     "workExperience" : [
         {
-            "title" : "Senior Technical Consultant",
+            "title" : "Solutions Architect Consultant",
             "company" : "Beethree",
             "timeFrom" : "November '16",
             "timeTo" : "Present",
-            "body" : "<p><\/p>"
+            "body" : "<ul><li>Architect - Designing and delivering enterprise class solutions at scale across many projects. Managing structure of integrations for complex business requirements<\/li> <li>Consultant - Helping customers to focus on MVP to deliver quality enterprise software quickly and effectively <\/li> <li>Mentor - Developing a mentorship program to encourage rapid up-skilling of new employees. Supporting minorities in tech to open the door for new opportunities<\/li> <li>Developer - Designing, delegating, and delivering agile software at scale<\/li> <li>Delivery Optimiser - Utilising experience to produce a business standard on how to work with Scrum and Agile to deliver successful projects<\/li><\/ul>"
         },
         {
             "title" : "Senior Technical Consultant",
