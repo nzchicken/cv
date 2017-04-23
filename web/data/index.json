@@ -1,6 +1,8 @@
 {
     "email" : "nayben@gmail.com",
     "mobile" : "+31 6 4130 6546",
+    "SITE_KEY" : "6LcV0BwUAAAAAOhqsmMr5pbPbDjgXAJEJCOegOAN",
+    "mailerEndpoint" : "https://api.bennaylor.nz/d/mail",
     "introduction" : "<p>Welcome, Goedendag!<\/p><p>I'm a consultant, senior developer, systems architect, cloud systems enthusiast, and a transformer of ideas into software. My current focus is working on the Salesforce.com platform, where I fill the role of a Senior Salesforce.com Technical Consultant.<\/p>",
     "workActivities" : [
         "Delivering software for many companies across many different industries by writing efficient, standards-based, high-performing code that fulfills the business requirements",
@@ -27,10 +29,17 @@
     "workExperience" : [
         {
             "title" : "Senior Technical Consultant",
+            "company" : "Beethree",
+            "timeFrom" : "November '16",
+            "timeTo" : "Present",
+            "body" : "<p><\/p>"
+        },
+        {
+            "title" : "Senior Technical Consultant",
             "company" : "Fronde",
             "timeFrom" : "August '14",
-            "timeTo" : "Present",
-            "body" : "<ul><li>Senior Consultant - Working with customers to gather requirements, prioritise their needs, and design solutions to improve their business processes by using Salesforce best practices<\/li><li>Architect - Taking high level requirements, expanding on important details, and building solutions that integrate many applications and platforms together into a single ecosystem<\/li><li>Developer - Expanding on solution architecture to implement the moving parts of the design. Working closely with customers using Agile methodologies to produce the solutions they need. Utilising the latest development tools, languages, and fr    ameworks, to deliver future proofed solutions<\/li><li>Motivator - Working closely with the rest of the consultant team, inspiring a \"forever learning\" attitude, and being enthusiastic and approachable for any questions and help required<\/li><li>Experimenter - Continuously experimenting with new technologies and pushing them to their limit. Integrating a physical brass bell with Salesforce to alert the office of company success (Sales, Project completion). Trying to get AWS Lambda to     run front end builds autonomously from Github pushes<\/li>Speaker - Attend Dreamforce 2015, where I delivered a talk to an at capacity room on the intricacies of Dynamic Apex Binding utilising Salesforce configuration elements<\/li><\/ul>"
+            "timeTo" : "October '16'",
+            "body" : "<ul><li>Senior Consultant - Working with customers to gather requirements, prioritise their needs, and design solutions to improve their business processes by using Salesforce best practices<\/li><li>Architect - Taking high level requirements, expanding on important details, and building solutions that integrate many applications and platforms together into a single ecosystem<\/li><li>Developer - Expanding on solution architecture to implement the moving parts of the design. Working closely with customers using Agile methodologies to produce the solutions they need. Utilising the latest development tools, languages, and fr    ameworks, to deliver future proofed solutions<\/li><li>Motivator - Working closely with the rest of the consultant team, inspiring a \"forever learning\" attitude, and being enthusiastic and approachable for any questions and help required<\/li><li>Experimenter - Continuously experimenting with new technologies and pushing them to their limit. Integrating a physical brass bell with Salesforce to alert the office of company success (Sales, Project completion). Trying to get AWS Lambda to     run front end builds autonomously from Github pushes<\/li><li>Speaker - Attend Dreamforce 2015, where I delivered a talk to an at capacity room on the intricacies of Dynamic Apex Binding utilising Salesforce configuration elements<\/li><\/ul>"
         },
         {
             "title" : "Lead CRM Developer",
@@ -53,5 +62,8 @@
             "timeTo" : "November '12",
             "body" : "<p>Various roles over 5 years including Reporting Analyst, Business Improvement Manager, and Business Analyst. More details can be provided on request.<\/p>"
         }
-    ]
+    ],
+    "work" : {
+        "body" : "<p>Most of my daytime Salesforce related work is done for clients, and therefore I can't publish any real projects. However, the following are some of the frameworks that I have regularly contributed to and/or developed:<\/p><ul><li><a href=\"http:\/\/www.github.com\/nzchicken\/clean-salesforce\">clean-salesforce (WIP)<\/a><\/li><li><a href=\"http:\/\/www.github.com\/dhoechst\/Salesforce-Test-Factory\">Salesforce-Test-Factory<\/a><\/li><li><a href=\"http:\/\/www.github.com\/nzchicken\/CalloutMock\">CalloutMock<\/a><\/li><li><a href=\"http:\/\/www.github.com\/nzchicken\/Salesforce-Lightning-Flux\">Salesforce-Lightning-Flux<\/a><\/li><\/ul><p>These are some of the frameworks that I regularly use:<\/p><ul><li><a href=\"http:\/\/www.github.com\/kevinohara80\/sfdc-trigger-framework\">sfdc-trigger-framework<\/a><\/li><li><a href=\"http:\/\/www.github.com\/afawcett\/declarative-lookup-rollup-summaries\">declarative-lookup-rollup-summaries<\/a><\/li><li><a href=\"http:\/\/www.github.com\/financialforcedev\/fflib-apex-common\">fflib-apex-common<\/a><\/li><\/ul><p>And for all my side projects (React, NodeJS, Serverless, etc), check out my <a href=\"http:\/\/www.github.com\/nzchicken\">github<\/a><\/p>"
+    }
 }
