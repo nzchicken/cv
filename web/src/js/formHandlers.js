@@ -38,9 +38,9 @@ class FormHandlers {
             }
             return response;
         })
-        .then(response => response.json())
+        .then(response => response.json)
         .then(response => {
-            this.clearForm(contactForm);
+            this.clearForm();
             this.setMessage('Thank you for your contact', false);
         })
         .catch(error => {
@@ -76,7 +76,7 @@ class FormHandlers {
 
     clearForm() {
         FORM_FIELDS.map(field => {
-            const element = this.contactform.querySelector('[name=' + field + ']');
+            const element = this.contactForm.querySelector('[name=' + field + ']');
             element.value = '';
             element.classList.toggle('is-invalid', false);
         });
