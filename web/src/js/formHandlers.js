@@ -41,7 +41,7 @@ class FormHandlers {
         .then(response => response.json)
         .then(response => {
             this.clearForm();
-            this.setMessage('Thank you for your contact', false);
+            this.setMessage('Thank you for your message', false);
         })
         .catch(error => {
             this.setMessage('Failed to send message. Please contact me on one of the above options', true);
