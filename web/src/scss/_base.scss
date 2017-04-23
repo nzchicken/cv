@@ -62,13 +62,16 @@ $weight-heavy: 600;
 }
 
 li {
-    padding-left: 1.4rem;
-    text-indent: -1.4rem;
+    list-style-position: outside;
+}
+
+ul {
+    margin-left: 1.8rem;
 }
 
 @media (min-width: 550px) {
     ul {
-        margin-left: 1rem;
+        margin-left: 3rem;
     }
 }
 
