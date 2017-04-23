@@ -1,0 +1,22 @@
+<section id="intro" class="intro section">
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                <h5 class="section-header">Introduction</h5>
+                {{{introduction}}}
+                <p class="section-sub-header">My usual work day</p>
+                <ul class="intro--list">
+                    {{#each workActivities}}
+                        <li class="list-item">{{this}}</li>
+                    {{/each}}
+                </ul>
+                <p class="section-sub-header">Whilst not at work</p>
+                <ul class="intro--list">
+                    {{#each hobbies}}
+                        <li class="list-item">{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

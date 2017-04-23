@@ -5,22 +5,6 @@
                 color $transition;
 } 
 
-.button-primary.active {
-    width: 126px;
-    background-color: $inactive;
-    border-color: $inactive;
-    cursor: auto;
-    .spinner {
-        opacity: 1;
-    }
-
-}
-.button-primary.active:hover,
-.button-primary.active:focus {
-    background-color: $inactive;
-    border-color: $inactive;
-}
-
 .spinner {
     margin-left: 5px;
     width: 11px;
@@ -29,10 +13,29 @@
     transition: opacity $transition;
 }
 
+.active {
+    .button-primary {
+        width: 126px;
+        background-color: $inactive;
+        border-color: $inactive;
+        cursor: auto;
+    }
+
+    .spinner {
+        opacity: 1;
+    }
+
+    .button-primary:hover, .button-primary:focus {
+        background-color: $inactive;
+        border-color: $inactive;
+    }  
+}
+
 .message {
     visibility: hidden;
     font-weight: $weight-heavy;
 }
+
 .message.is-error, .message.is-success {
     visibility: visible;
 }

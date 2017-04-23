@@ -1,0 +1,23 @@
+<section id="experience" class="experience section">
+    <div class="container">
+        <div class="row">
+            <div class="eight columns">
+                <h5 class="section-header">Experience</h5>
+            </div>
+        </div>
+        <div class="row">
+            <h6 class="section-sub-header">Skills <strong>/</strong> Certifications</h6>
+            <ul>
+                {{#each skillsAndCerts}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="row">
+            <h6 class="section-sub-header">Work Experience</h6>
+        </div>
+        {{#each workExperience}}
+        {{> work}}
+        {{/each}}
+    </div>
+</section>
