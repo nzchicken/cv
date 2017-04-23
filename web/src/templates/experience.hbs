@@ -2,14 +2,14 @@
     <div class="container">
         <div class="row">
             <div class="eight columns">
-                <h5 id="experience" class="section-header">Experience</h4>
+                <h5 id="experience" class="section-header">Experience</h5>
             </div>
         </div>
         <div class="row">
             <h6 class="section-sub-header">Skills <strong>/</strong> Certifications</h6>
             <ul>
                 {{#each skillsAndCerts}}
-                    <li>{{this}}</li>
+                <li>{{this}}</li>
                 {{/each}}
             </ul>
         </div>
@@ -17,7 +17,7 @@
             <h6 class="section-sub-header">Work Experience</h6>
         </div>
         {{#each workExperience}}
-            {{> work}}
+        {{> work}}
         {{/each}}
     </div>
 </section>
