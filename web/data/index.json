@@ -3,6 +3,7 @@
     "mobile" : "+31 6 4130 6546",
     "SITE_KEY" : "6LcyzhwUAAAAAFD4LpvpnqL6st6akL8gJW6wjSwt",
     "mailerEndpoint" : "https://api.bennaylor.nz/p/mail",
+    "analyticsTrackingCode" : "UA-98104450-1",
     "introduction" : "<p>Welcome, Goedendag!<\/p><p>I'm an architect, senior developer, consultant, cloud systems enthusiast, and a transformer of ideas into software. My current focus is working on the Salesforce.com platform, where I fill the role of a Solutions Architect Consultant.<\/p>",
     "workActivities" : [
         "Delivering software for many companies across many different industries by writing efficient, standards-based, high-performing code that fulfills the business requirements",
