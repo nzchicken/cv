@@ -1,9 +1,10 @@
 ---
 title: Experience
-type: markdown-experience
+type: post
+content: experience
 order: 2
 ---
-## Skills / Certifications
+### Skills / Certifications
 
 - Salesforce Certified Developer (401)
 - Salesforce App Builder

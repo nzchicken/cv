@@ -1,5 +1,5 @@
 ---
-type: markdown
+type: post
 title: Introduction
 order: 1
 ---

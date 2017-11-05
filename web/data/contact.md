@@ -1,5 +1,6 @@
 ---
 title: Contact
-type: contact-form
+type: post
+content: contact-form
 order: 4
 ---

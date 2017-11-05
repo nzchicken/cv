@@ -1,6 +1,6 @@
 ---
 title: Work
-type: markdown
+type: post
 order: 3
 ---
 Most of my daytime Salesforce related work is done for clients, and therefore I
