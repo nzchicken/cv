@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import React from 'react'
 
 const Wrapper = styled.header`
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid ${props => props.theme.borderColor || 'black'};
+    border-image: ${props => props.theme.borderImage || 'none' };
 `
 
 const HeadingLarge = styled.h1`

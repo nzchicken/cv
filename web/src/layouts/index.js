@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { getTheme, themeList } from '../themes/index'
 
+import Body from '../components/body'
 import Header from '../components/header'
 import Container from '../components/container'
 import Nav from '../components/nav'
@@ -35,7 +36,7 @@ class CommonLayout extends React.Component {
 
         return (
             <ThemeProvider theme={theme}>
-                <div>
+                <Body>
                     <Helmet
                         title="Gatsby Default Starter"
                         meta={[
@@ -53,7 +54,7 @@ class CommonLayout extends React.Component {
                         {children()}
                     </Container>
                     <style>{theme.typography.toString()}</style>
-                </div>
+                </Body>
             </ThemeProvider>
         )
     }

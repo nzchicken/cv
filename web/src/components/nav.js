@@ -13,7 +13,8 @@ const MenuButton = styled.button`
 	width: 2.5em;
 	height: 2.5em;
 	border: none;
-    background-color: transparent;
+    border-radius: 1.25em;
+    background-color: ${props => props.theme.menuButtonBackground || 'transparent' };
 
     &:focus {
         outline: 0;
@@ -23,10 +24,10 @@ const MenuButton = styled.button`
 const MenuWrap = styled.div`
 	position: fixed;
 	z-index: 999;
-	background: #ebedf4;
+    background-color: ${props => props.theme.menuBackground || 'whitesmoke' };
 	transition: width 0.3s, height 0.3s;
     width: ${props => props.show ? '280px' : '0'};
-    height: ${props => props.show ? '380px' : '0'};
+    height: ${props => props.show ? '390px' : '0'};
 	font-size: 1.5em;
 	top: 30px;
 	left: 30px;
@@ -39,27 +40,30 @@ const Menu = styled.nav`
 	height: 100%;
     opacity: ${props => props.show ? '1' : '0'};
 	font-size: 0.65em;
-	color: #64697d;
 	text-align: left;
 `
 
 const LinkList = styled.div`
     padding: 1.0em 0;
     margin: 0em 0.75em;
-	border-bottom: 3px solid rgba(125,129,148,0.2);
-	border-top: 3px solid rgba(125,129,148,0.2);
+    border-bottom: 2px solid ${props => props.theme.borderColor || 'black'};
+    border-top: 2px solid ${props => props.theme.borderColor || 'black'};
+    border-image: ${props => props.theme.borderImage || 'none'};
 `
 
 const Link = styled.a`
 	display: block;
 	margin: 0.25em 0;
-	color: #7d8194;
 	padding: 0.5em 1.5em;
     transform-origin: 100% 0%;
     font-size: 1em;
     overflow: hidden;
+    text-decoration: none;
+    font-family: ${props => props.theme.menuFont};
+    color: ${props => props.theme.menuColor || 'inherit' };
     ${props => props.show ? 'animation: ' + animSwoosh + ' 0.6s linear both;' : '' }
     ${props => props.show ? 'animation-delay: 0.2s;' : '' }
+    
 
     &:hover, &:focus {
         color: #64697d;
@@ -68,7 +72,7 @@ const Link = styled.a`
 
 const IconList = styled.div`
     text-align: right;
-    padding: 1em;
+    padding: 1.2em 1em;
 `
 
 const Icon = styled.a`
@@ -88,10 +92,10 @@ const Nav = ({ show, toggle, themeList, setTheme }) => (
                     })}
                 </IconList>
                 <LinkList>
-                    <Link show={show} href="#introduction"><span className='nav-link'>Introduction</span></Link>
-                    <Link show={show} href="#experience"><span className='nav-link'>Experience</span></Link>
-                    <Link show={show} href="#work"><span className='nav-link'>Work</span></Link>
-                    <Link show={show} href="#contact"><span className='nav-link'>Contact</span></Link>
+                    <Link show={show} href="#introduction">Introduction</Link>
+                    <Link show={show} href="#experience">Experience</Link>
+                    <Link show={show} href="#work">Work</Link>
+                    <Link show={show} href="#contact">Contact</Link>
                 </LinkList>
             </Menu>
         </MenuWrap>
