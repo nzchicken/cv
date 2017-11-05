@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 import Section from '../components/section'
-import ContactForm from '../components/contact-form'
 import ExperienceList from '../components/experience-list'
 import ExperienceItem from '../components/experience-item'
 
@@ -10,7 +9,6 @@ const IndexPage = ({ data }) => {
     const posts = data.posts.edges;
     const experiences = data.experience.edges;
 
-    const contactForm = (<ContactForm />)
     const experienceList = (
         <ExperienceList>
         {experiences.map(({ node }) => (
@@ -31,7 +29,6 @@ const IndexPage = ({ data }) => {
             {posts.map(({ node }) => (
                 <Section title={node.frontmatter.title} key={node.frontmatter.title}>
                     <div dangerouslySetInnerHTML={{ __html: node.html }} />
-                    {node.frontmatter.content === 'contact-form' && contactForm}
                     {node.frontmatter.content === 'experience' && experienceList}
                 </Section>
             ))}
@@ -54,7 +51,7 @@ export const query = graphql`
 	    }
 	  }
 	}
-    experience: allMarkdownRemark(filter: { frontmatter: {type: { eq: "experience" } } }, sort: { fields: [frontmatter___timeTo], order: DESC}) {
+    experience: allMarkdownRemark(filter: { frontmatter: {type: { eq: "experience" } } }, sort: { fields: [frontmatter___timeFrom], order: DESC}) {
 	  edges {
 	    node {
           frontmatter {
