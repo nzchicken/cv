@@ -1,44 +1,73 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import Header from '../components/header'
 import Section from '../components/section'
 import ContactForm from '../components/contact-form'
+import ExperienceList from '../components/experience-list'
+import ExperienceItem from '../components/experience-item'
 
-const IndexPage = ({ data }) => (
-    <div>
-        <Header
-            fullName="Ben Naylor"
-            brief="Salesforce Dev, Consultant, Electronics enthusiast"
-            heading="Curriculum Vitae / Portfolio"
-        />
-        {data.allMarkdownRemark.edges.map(({ node }) => {
-            return <Section title={node.frontmatter.title} key={node.frontmatter.title}>
-                <div dangerouslySetInnerHTML={{ __html: node.html }} />
-                {node.frontmatter.type === 'contact-form' && (<ContactForm />)}
-                {node.frontmatter.type === 'markdown-experience' && (
-                    <div>Experience stuff goes here</div>
-                )}
-            </Section>
-        })}
-    </div>
-)
+const IndexPage = ({ data }) => {
+    const posts = data.posts.edges;
+    const experiences = data.experience.edges;
+
+    const contactForm = (<ContactForm />)
+    const experienceList = (
+        <ExperienceList>
+        {experiences.map(({ node }) => (
+            <ExperienceItem 
+                title={node.frontmatter.title}
+                company={node.frontmatter.company}
+                from={node.frontmatter.timeFrom}
+                to={node.frontmatter.timeTo}
+                html={node.html}
+                key={node.frontmatter.company}
+            />
+        ))}
+        </ExperienceList>
+    )
+
+    return (
+        <div>
+            {posts.map(({ node }) => (
+                <Section title={node.frontmatter.title} key={node.frontmatter.title}>
+                    <div dangerouslySetInnerHTML={{ __html: node.html }} />
+                    {node.frontmatter.content === 'contact-form' && contactForm}
+                    {node.frontmatter.content === 'experience' && experienceList}
+                </Section>
+            ))}
+        </div>
+    )
+}
 
 
 export const query = graphql`
-    query Posts {
-        allMarkdownRemark(sort: { fields: [frontmatter___order], order: ASC}) {
-            edges {
-                node {
-                    frontmatter {
-                      title
-                      type
-                    }
-                    html
-                }
-            }
-        }
-    }
+ query IndexPage {
+	posts: allMarkdownRemark(filter: { frontmatter: {type: { eq: "post" } } }, sort: { fields: [frontmatter___order], order: ASC}) {
+	  edges {
+	    node {
+          frontmatter {
+            title
+			type
+            content
+          }
+          html
+	    }
+	  }
+	}
+    experience: allMarkdownRemark(filter: { frontmatter: {type: { eq: "experience" } } }, sort: { fields: [frontmatter___timeTo], order: DESC}) {
+	  edges {
+	    node {
+          frontmatter {
+            title
+            company
+            timeFrom
+            timeTo
+          }
+          html
+	    }
+	  }
+	}
+  }
 `
 
 

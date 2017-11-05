@@ -2,10 +2,11 @@ import styled from 'styled-components'
 import React from 'react'
 
 const Wrapper = styled.header`
+    border-bottom: 1px solid black;
 `
 
 const HeadingLarge = styled.h1`
-    font-size: 2rem;
+    font-size: 2.5rem;
 `
 
 const HeadingMedium = styled.h2`

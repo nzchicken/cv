@@ -7,7 +7,9 @@
     "gatsby": "^1.9.63",
     "gatsby-link": "^1.6.21",
     "gatsby-plugin-react-helmet": "^1.0.5",
-    "gatsby-source-filesystem": "^1.5.5"
+    "gatsby-source-filesystem": "^1.5.5",
+    "moment": "^2.19.1",
+    "typography": "^0.16.6"
   },
   "keywords": [
     "gatsby"
@@ -22,7 +24,6 @@
   },
   "devDependencies": {
     "gatsby-plugin-styled-components": "^1.0.5",
-    "gatsby-plugin-typography": "^1.7.10",
     "gatsby-transformer-remark": "^1.7.15",
     "prettier": "^1.7.4"
   }
