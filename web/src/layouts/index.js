@@ -15,7 +15,7 @@ class CommonLayout extends React.Component {
 
     constructor() {
         super()
-        this.state = { showMenu: false, themeName: 'geocities' }
+        this.state = { showMenu: false, themeName: 'default' }
         this.toggleMenu = this.toggleMenu.bind(this)
         this.setTheme = this.setTheme.bind(this)
     }

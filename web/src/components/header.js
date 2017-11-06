@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 
 const Wrapper = styled.header`
-    border-bottom: 2px solid ${props => props.theme.borderColor || 'black'};
+    border-bottom: 2px solid ${props => props.theme.primaryColor || 'black'};
     border-image: ${props => props.theme.borderImage || 'none' };
 `
 

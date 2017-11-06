@@ -2,7 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { animJelly, animSwoosh } from '../utils/animations'
-import { MenuIcon } from '../utils/icons'
+import menuSVG from '../img/menu.svg'
+
+const MenuIcon = styled(menuSVG)`
+    fill: none;
+    stroke: ${props => props.theme.typography.options.bodyColor || 'black'};
+    width: 53px;
+    height: 53px;
+
+    &:hover {
+        stroke: ${props => props.theme.primaryColor };
+        cursor: pointer;
+    }
+`
 
 const MenuButton = styled.button`
 	position: fixed;
@@ -24,9 +36,9 @@ const MenuButton = styled.button`
 const MenuWrap = styled.div`
 	position: fixed;
 	z-index: 999;
-    background-color: ${props => props.theme.menuBackground || 'whitesmoke' };
+    background-color: ${props => props.theme.secondaryColor || 'whitesmoke' };
 	transition: width 0.3s, height 0.3s;
-    width: ${props => props.show ? '280px' : '0'};
+    width: ${props => props.show ? '240px' : '0'};
     height: ${props => props.show ? '390px' : '0'};
 	font-size: 1.5em;
 	top: 30px;
@@ -46,8 +58,8 @@ const Menu = styled.nav`
 const LinkList = styled.div`
     padding: 1.0em 0;
     margin: 0em 0.75em;
-    border-bottom: 2px solid ${props => props.theme.borderColor || 'black'};
-    border-top: 2px solid ${props => props.theme.borderColor || 'black'};
+    border-bottom: 2px solid ${props => props.theme.primaryColor || 'black'};
+    border-top: 2px solid ${props => props.theme.primaryColor || 'black'};
     border-image: ${props => props.theme.borderImage || 'none'};
 `
 

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledSection = styled.section`
-    margin: 5rem 0 3rem 0;
+    margin: 4rem 0 3rem 0;
 `
 
 const Section = ({title, children}) => (

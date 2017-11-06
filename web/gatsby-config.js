@@ -6,6 +6,7 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-transformer-remark`,
         `gatsby-plugin-styled-components`,
+        `@jacobmischka/gatsby-plugin-react-svg`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {

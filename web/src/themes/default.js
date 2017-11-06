@@ -1,22 +1,31 @@
 import Typography from 'typography'
+import lincolnTheme from 'typography-theme-lincoln'
 
-const typography = new Typography({
-    baseFontSize: '22px',
-    overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
-        '*': {
-            color: '#323232'
-        }
-    })
+lincolnTheme.baseFontSize = '22px'
+lincolnTheme.bodyColor = '#323232'
+lincolnTheme.overrideStyles = ({ adjustFontSizeTo, scale, rhythm }, options) => ({
+    a: {
+        color: '#638fb9'
+    },
+    h2: {
+        color: '#638fb9'
+    }
 })
 
-console.log(typography);
+const typography = new Typography(lincolnTheme);
 
 const Default = {
     typography,
-    backgroundColor: 'aliceblue',
+    primaryColor: '#638FB9',
+    secondaryColor: '#deebf8',
+    backgroundColor: '#EAF3FC',
     menuBackground: 'white',
-    borderColor: '#adceea',
-    menuFont: typography.options.headerFontFamily.join(',')
+    menuFont: typography.options.headerFontFamily.join(','),
+    customStyles: `
+        a:hover {
+            color: inherit;
+        }
+    `
 }
 
 export default Default
