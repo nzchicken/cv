@@ -15,7 +15,7 @@ class CommonLayout extends React.Component {
 
     constructor() {
         super()
-        this.state = { showMenu: false, themeName: 'default' }
+        this.state = { showMenu: false, themeName: 'geocities' }
         this.toggleMenu = this.toggleMenu.bind(this)
         this.setTheme = this.setTheme.bind(this)
     }
@@ -54,6 +54,7 @@ class CommonLayout extends React.Component {
                         {children()}
                     </Container>
                     <style>{theme.typography.toString()}</style>
+                    <style>{theme.customStyles || ''}</style>
                 </Body>
             </ThemeProvider>
         )
