@@ -1,7 +1,9 @@
 ---
-title: Work
+title: The Extras
 type: post
 order: 3
+color: '#7ef1b2'
+backcolor: '#f6fef9'
 ---
 Most of my daytime Salesforce related work is done for clients, and therefore I
 can't publish any real projects. However, the following are some of the

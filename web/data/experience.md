@@ -3,6 +3,8 @@ title: Experience
 type: post
 content: experience
 order: 2
+color: '#809dff'
+backcolor: '#fafaff'
 ---
 ### Skills / Certifications
 

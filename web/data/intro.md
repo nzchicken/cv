@@ -2,6 +2,8 @@
 type: post
 title: Introduction
 order: 1
+color: '#f1bd88'
+backcolor: '#fffdfa'
 ---
 Welcome, Goedendag!
 

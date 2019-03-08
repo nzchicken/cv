@@ -2,6 +2,7 @@
 title: Technical Wizard
 company: Beethree
 timeFrom: 2016-11-01
+timeTo: 2017-11-01
 type: experience
 ---
 - Architect - Designing and delivering enterprise class solutions at scale across many projects. Managing structure of integrations for complex business requirements

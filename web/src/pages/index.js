@@ -1,72 +1,69 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import Section from '../components/section'
-import ExperienceList from '../components/experience-list'
-import ExperienceItem from '../components/experience-item'
+import { Layout, Section, WorkHistory } from '../components'
 
-const IndexPage = ({ data }) => {
-    const posts = data.posts.edges;
-    const experiences = data.experience.edges;
+const Container = styled.div`
+  width: 100%;
+`;
 
-    const experienceList = (
-        <ExperienceList>
-        {experiences.map(({ node }) => (
-            <ExperienceItem 
-                title={node.frontmatter.title}
-                company={node.frontmatter.company}
-                from={node.frontmatter.timeFrom}
-                to={node.frontmatter.timeTo}
+export default ({data}) => (
+  <Layout>
+    {console.log(data)}
+    <Container>
+      {data.posts.edges.map(({ node }, i) => (
+        <Section
+          key={i}
+          html={node.html}
+          {...node.frontmatter}
+        >
+          {node.frontmatter.content === 'experience' && (
+            <>
+            <h2>Work History</h2>
+            {data.experience.edges.map(({ node }, i) => (
+              (<WorkHistory
+                key={i}
+                {...node.frontmatter}
                 html={node.html}
-                key={node.frontmatter.company}
-            />
-        ))}
-        </ExperienceList>
-    )
-
-    return (
-        <div>
-            {posts.map(({ node }) => (
-                <Section title={node.frontmatter.title} key={node.frontmatter.title}>
-                    <div dangerouslySetInnerHTML={{ __html: node.html }} />
-                    {node.frontmatter.content === 'experience' && experienceList}
-                </Section>
+              />)
             ))}
-        </div>
-    )
-}
-
+            </>
+          )}
+        </Section>
+      ))}
+    </Container>
+  </Layout>
+)
 
 export const query = graphql`
- query IndexPage {
-	posts: allMarkdownRemark(filter: { frontmatter: {type: { eq: "post" } } }, sort: { fields: [frontmatter___order], order: ASC}) {
-	  edges {
-	    node {
-          frontmatter {
-            title
-			type
-            content
-          }
-          html
-	    }
-	  }
-	}
-    experience: allMarkdownRemark(filter: { frontmatter: {type: { eq: "experience" } } }, sort: { fields: [frontmatter___timeFrom], order: DESC}) {
-	  edges {
-	    node {
-          frontmatter {
-            title
-            company
-            timeFrom
-            timeTo
-          }
-          html
-	    }
-	  }
-	}
+query IndexPage {
+  posts: allMarkdownRemark(filter: { frontmatter: {type: { eq: "post" } } }, sort: { fields: [frontmatter___order], order: ASC}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          type
+          content
+          color
+          backcolor
+        }
+        html
+      }
+    }
   }
-`
-
-
-export default IndexPage
-
+  experience: allMarkdownRemark(filter: { frontmatter: {type: { eq: "experience" } } }, sort: { fields: [frontmatter___timeFrom], order: DESC}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          company
+          timeFrom
+          timeTo
+        }
+        html
+      }
+    }
+  }
+}
+`;
