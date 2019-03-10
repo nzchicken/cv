@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: `cv`,
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
@@ -7,8 +6,8 @@ module.exports = {
         name: `Ben Naylor CV`,
         short_name: `BenCV`,
         start_url: `/`,
-        background_color: ``,
-        theme_color: ``,
+        background_color: `#d9e2e1`,
+        theme_color: `#d9e2e1`,
         display: `standalone`,
         icon: `static/favicon.png`,
         include_favicon: true

@@ -19,9 +19,10 @@ const Layout = ({ children }) => (
     <Helmet
       title={Config.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
+        { name: 'description', content: 'Ben Naylor - Everything you need to know' },
+        { name: 'keywords', content: 'Ben, Naylor, CV' }
       ]}
+      htmlAttributes={{lang: 'en'}}
     />
     <Header
       {...Config.contact}
