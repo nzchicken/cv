@@ -1,6 +1,6 @@
 ---
 title: Lead CRM Developer
-company: Vodafone New Zealand
+company: Vodafone
 timeFrom: 2012-11-01
 timeTo: 2014-08-01
 type: experience

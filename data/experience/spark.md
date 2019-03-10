@@ -1,6 +1,6 @@
 ---
 title : Various
-company : Spark New Zealand (prev. Telecom NZ)
+company : Spark
 timeFrom : 2007-02-01
 timeTo : 2012-11-01
 type: experience
