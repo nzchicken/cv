@@ -1,5 +1,5 @@
 const config = {
-  title: 'CV for great victory',
+  title: 'Ben Naylor - Curriculum Vitae',
   contact: {
     title: 'Ben Naylor',
     subtitle: 'Professional Code Monkey, General Enthusiast',

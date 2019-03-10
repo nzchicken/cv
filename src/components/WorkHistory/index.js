@@ -29,6 +29,13 @@ const Company = styled.h3`
   display: inline-block;
   font-style: italic;
   margin-top: 0.8em;
+
+  @media (max-width: 768px) {
+    display: block;
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
 `
 
 const Separator = styled.div`
@@ -37,6 +44,9 @@ const Separator = styled.div`
   &:before {
     font-size: 1.3em;
     content: '//';
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `
 

@@ -13,19 +13,3 @@ lincolnTheme.overrideThemeStyles = () => ({
 
 const typography = new Typography(lincolnTheme);
 export default typography;
-
-//const Default = {
-    //typography,
-    //primaryColor: '#638FB9',
-    //secondaryColor: '#deebf8',
-    //backgroundColor: '#EAF3FC',
-    //menuBackground: 'white',
-    //menuFont: typography.options.headerFontFamily.join(','),
-    //customStyles: `
-        //a:hover {
-            //color: inherit;
-        //}
-    //`
-//}
-
-////export default Default
