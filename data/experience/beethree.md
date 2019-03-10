@@ -1,12 +1,22 @@
 ---
-title: Technical Wizard
-company: Beethree
+title: Technical Architect
+company: Nextview
 timeFrom: 2016-11-01
 timeTo: 2017-11-01
 type: experience
 ---
-- Architect - Designing and delivering enterprise class solutions at scale across many projects. Managing structure of integrations for complex business requirements
-- Consultant - Helping customers to focus on MVP to deliver quality enterprise software quickly and effectively
-- Mentor - Developing a mentorship program to encourage rapid up-skilling of new employees. Supporting minorities in tech to open the door for new opportunities
-- Developer - Designing, delegating, and delivering agile software at scale
-- Delivery Optimiser - Utilising experience to produce a business standard on how to work with Scrum and Agile to deliver successful projects
+Nextview (formerly Beethree) was my first job in The Netherlands. Nextview is a 
+Salesforce consultancy, where I worked on varying clients, including Guidion for 
+the better part of 8 months.
+
+I participated in the full spectrum of consultancy activities from presales 
+through to development and support. I was relied on for my depth and knowledge 
+of Salesforce, along with my systems architecture knowledge to bring quality 
+implementations for the clients I worked on.
+
+My approach to requirements was to always ask for the "Why" to ensure I was 
+building the right thing that would actually solve the business problem. I
+engaged with decision makers to ensure that we were working together.
+
+This is where I started heavily using and implementing SFDX, along with CI/CD to
+ensure that our team was as productive as possible.

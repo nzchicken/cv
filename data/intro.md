@@ -5,31 +5,28 @@ order: 1
 color: '#f1bd88'
 backcolor: '#fffdfa'
 ---
-Welcome, Goedendag!
+Welkom!
 
-I'm an architect, senior developer, consultant, cloud systems enthusiast, and a
-transformer of ideas into software. My current focus is working on the
-Salesforce.com platform, where I fill the role of a Solutions Architect
-Consultant.
+I'm Ben, it's nice to meet you!
 
-### My usual day
+I'm a software developer at heart, and I just so happen to do this during the 
+day at work. I like to add something back to the world by making enterprise
+grade software that stops people from having to do monotonous jobs, freeing them
+up to do more important things.
 
-- Delivering software for many companies across many different industries by
-  writing efficient, standards-based, high-performing code that fulfills the
-  business requirements
-- Discovering what the client needs for their project by challenging the status
-  quo and then providing true business value
-- Providing high-level architectural guidance for complex integration points
-  across many different clients
-- Engaging with our wider team, bringing a sense of camaraderie to the office
-- Working in small agile teams, flexibly and effectively delivering great
-  outcomes
+I work largely with web technologies, but also play a bit with Integrated
+Circuits and the Internet of Things. I've been developing on Salesforce since
+2011, of which 4 years were in consultancies where I had exposure to a wide 
+variety of industries.
 
-### Whilst not at work
+I am:
+- A New Zealander
+- Trying to become Dutch
+- A lover of all things Serverless
+- A Software/Solutions architect
+- Constantly looking for new things to learn
+- An all round pragmatist
+- A person that works well in teams, and enjoys Agile software development
 
-- Learning Dutch
-- Web/mobile app development
-- Playing with ICs, Arduino’s, Photons (particle.io)
-- Woodworking
-- Being outdoors, hiking overnight trips in the middle of nowhere
-- Playing board games with friends (all the good ones of course)"
+This website serves to give you some more information about what I do, what I've 
+done, and where I want to go to.
