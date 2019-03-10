@@ -11,10 +11,16 @@ const Bar = styled.div`
   position: absolute;
   left: -48px;
   top: 0;
-  width: 15px;
+  width: 12px;
   height: 100%;
   background-color: #9eb5ff;
-  border-radius: 0px 15px 15px 0px;
+  border-radius: 0px 12px 12px 0px;
+
+  @media (max-width: 768px) {
+    width: 8px;
+    left: -16px;
+    border-radius: 0px 8px 8px 0px;
+  }
 `
 
 const HeadingWrapper = styled.div``

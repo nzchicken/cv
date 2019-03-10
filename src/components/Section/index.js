@@ -8,8 +8,8 @@ const Container = styled.div`
   margin-bottom: 3em;
   background: ${props => props.color};
 
-  @media (max-width: 700px) {
-    padding: 0px 15px 0px 25px;
+  @media (max-width: 768px) {
+    padding: 0px 16px 0px 24px;
   }
 `
 
@@ -21,7 +21,7 @@ const Bar = styled.div`
   height: 100%;
   background: ${props => props.color};
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     width: 8px;
   }
 `
@@ -30,7 +30,6 @@ const Heading = styled.h1` `
 
 const Section = ({title, html, color, backcolor, children}) => (
   <>
-  {console.log(color)}
     <Container color={backcolor}>
       <Bar color={color}/>
       <Heading>{title}</Heading>

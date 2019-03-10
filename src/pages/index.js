@@ -10,7 +10,6 @@ const Container = styled.div`
 
 export default ({data}) => (
   <Layout>
-    {console.log(data)}
     <Container>
       {data.posts.edges.map(({ node }, i) => (
         <Section
